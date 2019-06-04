@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Twitter Video Downloader is a chrome extension that downloads videos from Twitter
 
 ## Available Scripts
 

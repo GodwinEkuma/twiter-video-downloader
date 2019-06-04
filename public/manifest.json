@@ -1,15 +1,46 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
+  "manifest_version": 2,
+  "name": "Twitter Video Downloader",
+  "description": "For downloading videos from twitter web.",
+  "version": "1.0.0",
+  "permissions": [
+    "*://twitter.com/*",
+    "*://*.twitter.com/*",
+    "*://*.twimg.com/*",
+    "cookies",
+    "storage",
+    "downloads",
+    "tabs",
+    "clipboard"
+  ],
+  "icons": {
+    "16": "/images/favicon-16x16.png",
+    "32": "/images/favicon-32x32.png",
+    "96": "/images/favicon-96x96.png",
+    "256": "/images/favicon-256x256.png"
+  },
+  "browser_action": {
+    "default_title": "Twitter Video Downloader",
+    "default_icon": {
+      "16": "/images/favicon-16x16.png",
+      "32": "/images/favicon-32x32.png",
+      "96": "/images/favicon-96x96.png",
+      "256": "/images/favicon-256x256.png"
+    },
+    "default_popup": "/index.html"
+  },
+  "background": {
+    "scripts": ["/static/js/0.chunk.js", "/static/js/background.js"]
+  },
+  "content_scripts": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "matches": [
+        "*://twitter.com/*",
+        "*://*.twitter.com/*",
+        "*://*.twimg.com/*"
+      ],
+      "js": ["/static/js/0.chunk.js", "/static/js/content.js"]
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "content_security_policy": "script-src 'self' 'sha256-qAcmzXQ8jmB7ddF3B7OWAJKIn2C00zGiCGj8W5dG+wo='; object-src 'self'"
 }
