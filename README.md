@@ -4,6 +4,10 @@ Twitter Video Downloader is a chrome extension that downloads videos from Twitte
 
 In the project directory, you can run:
 
+### `npm install`
+
+Installs application dependencies
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
