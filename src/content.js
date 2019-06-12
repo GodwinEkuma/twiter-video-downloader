@@ -6,12 +6,14 @@ import DownloadButton from "./downloadButton";
 document.addEventListener("DOMNodeInserted", DOMNodeInserted, false);
 
 function DOMNodeInserted(event) {
+  if (typeof event.target.querySelectorAll !== "function") return;
   const videos = event.target && event.target.querySelectorAll("video");
   if (!videos || videos.length === 0) return;
   videos.forEach(video => injectButton(video));
 }
 
 function hasButton(target) {
+  if (target.closest(".css-1dbjc4n.r-19i43ro") === null) return;
   const tweet = target
     .closest(".css-1dbjc4n.r-19i43ro")
     .nextSibling.querySelectorAll(
@@ -75,6 +77,8 @@ function injectButton(target) {
   );
   btnRoot.onclick = downloadVideo;
   tweet.after(btnRoot);
+  const darkMode =
+    document.querySelector("body").style.backgroundColor === "rgb(24, 36, 48)";
 
-  ReactDOM.render(<DownloadButton />, btnRoot);
+  ReactDOM.render(<DownloadButton darkMode={darkMode} />, btnRoot);
 }

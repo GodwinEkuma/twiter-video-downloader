@@ -10,8 +10,7 @@
     "cookies",
     "storage",
     "downloads",
-    "tabs",
-    "clipboard"
+    "tabs"
   ],
   "icons": {
     "16": "/images/favicon-16x16.png",
