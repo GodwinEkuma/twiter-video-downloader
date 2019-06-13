@@ -58,6 +58,7 @@ function getPromotedTweetId(event) {
 }
 
 function injectButton(target) {
+  if (target.closest(".css-1dbjc4n.r-19i43ro") === null) return;
   const tweet = target
     .closest(".css-1dbjc4n.r-19i43ro")
     .nextSibling.querySelectorAll(
