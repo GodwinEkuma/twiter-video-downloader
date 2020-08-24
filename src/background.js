@@ -12,7 +12,8 @@ function fetchVideoUrl(request) {
     },
     referrer: "https://twitter.com"
   };
-  fetch(`https://twitter-api-service.herokuapp.com/video/${tweetId}`, init)
+  // fetch(`https://twitter-api-service.herokuapp.com/video/${tweetId}`, init)
+  fetch(`http://localhost:5001/video/${tweetId}`, init)
     .then(response => {
       if (response.status === 200) return response.text();
       if (response.status === 404)
