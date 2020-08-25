@@ -46,7 +46,9 @@ function getPromotedTweetId(event) {
 }
 
 function injectButton(target) {
-  const tweetContent = target.closest(".css-1dbjc4n.r-18bvks7.r-1ylenci.r-1phboty.r-rs99b7.r-156q2ks.r-1udh08x").parentElement.parentElement.parentElement;
+  const tweetContent = target.closest(".css-1dbjc4n.r-18bvks7.r-1ylenci.r-1phboty.r-rs99b7.r-156q2ks.r-1udh08x")
+  && target.closest(".css-1dbjc4n.r-18bvks7.r-1ylenci.r-1phboty.r-rs99b7.r-156q2ks.r-1udh08x")
+  .parentElement.parentElement.parentElement;
   const query = '.css-1dbjc4n.r-1oszu61.r-1kfrmmb.r-1efd50x.r-5kkj8d.r-18u37iz.r-ahm1il.r-a2tzq0';
   const actionIcons  = tweetContent.querySelector(query) || tweetContent.nextSibling;
   if (actionIcons === null) return;
